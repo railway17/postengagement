@@ -1,0 +1,167 @@
+.sidebar-icon-parent svg,
+.header-action-btn svg,
+.capture-tools svg {
+    color: #0e1a44;
+}
+
+.badge {
+    @apply rounded-full justify-center px-2 py-[1rem] border-[#c7e4ff] bg-[#deefff];
+    @apply h-5 m-1 border text-sm leading-5 inline-flex items-center;
+}
+
+/* Reaction Styles */
+
+.reaction {
+    @apply top-[8px] opacity-0 w-[48px] h-[48px] cursor-pointer absolute list-none inline-block;
+    @apply transform scale-100 bg-cover bg-no-repeat bg-center;
+    transition: opacity 0.5s ease-in-out 1s, transform 0.07s ease-in-out 0s,
+        top 0.07s ease-in-out 0s;
+}
+
+.reaction::before {
+    line-height: 17px;
+    transition: opacity 0.2s ease-in-out 0s;
+    @apply rounded-full inline-block bg-black bg-opacity-60;
+    @apply w-4/5 top-[-25px] opacity-0 h-[17px] ml-[10%] text-white text-[0.7em] text-center absolute;
+}
+
+.reaction:hover {
+    top: 2px;
+    transform: scale(1.4, 1.4);
+}
+
+.reaction:hover::before {
+    opacity: 1;
+}
+
+#add_positive_reaction:hover .reaction {
+    opacity: 1;
+    animation-duration: 0.5s;
+    animation-name: reaction_delay;
+}
+
+.reaction-like::before {
+    content: "Like";
+}
+
+#add_positive_reaction:hover .reaction-love {
+    animation-delay: 0.1s;
+}
+
+.reaction-love::before {
+    content: "Love";
+}
+
+#add_positive_reaction:hover .reaction-haha {
+    animation-delay: 0.1s;
+}
+
+.reaction-haha::before {
+    content: "Haha";
+}
+
+#add_positive_reaction:hover .reaction-wow {
+    animation-delay: 0.15s;
+}
+
+.reaction-wow::before {
+    content: "Wow";
+}
+
+#add_positive_reaction:hover .reaction-sad {
+    animation-delay: 0.2s;
+}
+
+.reaction-sad::before {
+    content: "Sad";
+}
+
+#add_positive_reaction:hover .reaction-angry {
+    animation-delay: 0.25s;
+}
+
+.reaction-angry::before {
+    content: "Angry";
+}
+
+.reactions-box {
+    @apply h-[85px] w-[360px] m-auto p-[10px] hidden relative rounded-[44px];
+}
+
+#add_positive_reaction:hover .reactions-box {
+    display: block;
+}
+
+.reaction-like {
+    left: 12px;
+    transition-delay: 0s;
+    background-image: url("assets/icons/reactions_like.png");
+}
+
+.reaction-love {
+    left: 70px;
+    transition-delay: 0.05s;
+    background-image: url("assets/icons/reactions_love.png");
+}
+
+.reaction-haha {
+    left: 128px;
+    transition-delay: 0.1s;
+    background-image: url("assets/icons/reactions_haha.png");
+}
+
+.reaction-wow {
+    left: 186px;
+    transition-delay: 0.15s;
+    background-image: url("assets/icons/reactions_wow.png");
+}
+
+.reaction-sad {
+    left: 244px;
+    transition-delay: 0.2s;
+    background-image: url("assets/icons/reactions_sad.png");
+}
+
+.reaction-angry {
+    left: 302px;
+    transition-delay: 0.25s;
+    background-image: url("assets/icons/reactions_angry.png");
+}
+
+.like-reaction-like.badge-reaction {
+    background-image: url("assets/icons/reactions_like.png");
+}
+
+.like-reaction-love.badge-reaction {
+    background-image: url("assets/icons/reactions_love.png");
+}
+
+.like-reaction-wow.badge-reaction {
+    background-image: url("assets/icons/reactions_wow.png");
+}
+
+.like-reaction-haha.badge-reaction {
+    background-image: url("assets/icons/reactions_haha.png");
+}
+
+.like-reaction-sad.badge-reaction {
+    background-image: url("assets/icons/reactions_sad.png");
+}
+
+.like-reaction-angry.badge-reaction {
+    background-image: url("assets/icons/reactions_angry.png");
+}
+
+@keyframes reaction_delay {
+    0% {
+        @apply w-12 h-12 top-[60px];
+    }
+
+    48% {
+        @apply w-14 h-14 top-[5px];
+    }
+
+    100% {
+        @apply w-12 h-12 top-2;
+    }
+}
